@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  button(.title, type='submit') 전송
+  input(placeholder=title + ' 연습')
+
+  - var node = 'Node.js'
+  - var js = 'javascript'
+  p #{node}와 #{js}
+
+  p= '<Strong>이스케이프</Strong>'
+  p!= '<Strong>이스케이프</strong>'
+
+  ul 
+    each fruit in ['사과', '배', '오렌지']
+      li= fruit
+
+  ul 
+    each fruit, index in ['사과', '배', '오렌지']
+      li= (index+1)+'번째'+fruit    
+
+  - var isLoggedIn = true
+  if isLoggedIn
+    div 로그인 되었습니다
+  else
+    div 로그인이 필요합니다.
+
+  - var fruit = 'apple'
+  case fruit
+    when 'apple'
+      p 사과입니다
+    when 'banana'
+      p 바나나입니다
+
+block footer
+  p#fff 푸푸푸푸푸
